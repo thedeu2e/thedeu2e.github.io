@@ -1,51 +1,28 @@
-<html>
-<head>
-<title>big5.css</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<style type="text/css">
-.s0 { color: #e8bf6a;}
-.s1 { color: #a9b7c6;}
-.s2 { color: #bababa;}
-.s3 { color: #a9b7c6;}
-.s4 { color: #cc7832;}
-.s5 { color: #6897bb;}
-.s6 { color: #a5c261;}
-</style>
-</head>
-<body bgcolor="#2b2b2b">
-<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
-<tr><td><center>
-<font face="Arial, Helvetica" color="#000000">
-big5.css</font>
-</center></td></tr></table>
-<pre><span class="s0">body </span><span class="s1">{</span>
-    <span class="s2">font-family</span><span class="s3">:</span><span class="s0">Calibri</span><span class="s4">;</span>
-<span class="s1">}</span>
+body {
+    font-family:Calibri;
+}
 
-<span class="s0">line </span><span class="s1">{</span>
-    <span class="s2">stroke</span><span class="s3">:</span><span class="s5">#aaa</span><span class="s4">;</span>
-<span class="s1">}</span>
+line {
+    stroke:#aaa;
+}
 
-<span class="s1">.</span><span class="s0">bar</span><span class="s1">{</span>
-    <span class="s2">fill</span><span class="s3">:</span><span class="s5">#1e99e7</span><span class="s4">;</span>
-    <span class="s2">opacity</span><span class="s3">: </span><span class="s5">0.7</span><span class="s4">;</span>
-    <span class="s2">font-size</span><span class="s3">:</span><span class="s5">24</span><span class="s6">pt</span><span class="s4">;</span>
-    <span class="s2">font-weight</span><span class="s3">:</span><span class="s6">bold</span><span class="s4">;</span>
+.bar{
+    fill:#1e99e7;
+    opacity: 0.7;
+    font-size:24pt;
+    font-weight:bold;
 
-<span class="s1">}</span>
+}
 
-<span class="s1">.</span><span class="s0">xlabel</span><span class="s1">{</span>
-    <span class="s2">fill</span><span class="s3">:</span><span class="s5">#aaa</span><span class="s4">;</span>
-    <span class="s2">font-size</span><span class="s3">:</span><span class="s5">14</span><span class="s6">pt</span><span class="s4">;</span>
-    <span class="s2">text-anchor</span><span class="s3">:</span><span class="s6">middle</span><span class="s4">;</span>
-<span class="s1">}</span>
+.xlabel{
+    fill:#aaa;
+    font-size:14pt;
+    text-anchor:middle;
+}
 
-<span class="s1">.</span><span class="s0">ylabel</span><span class="s1">{</span>
-    <span class="s2">font-size</span><span class="s3">:</span><span class="s5">25</span><span class="s6">pt</span><span class="s4">;</span>
-    <span class="s2">fill</span><span class="s3">:</span><span class="s6">gray</span><span class="s4">;</span>
-    <span class="s2">font-weight</span><span class="s3">:</span><span class="s6">bold</span><span class="s4">;</span>
-    <span class="s2">text-anchor</span><span class="s3">:</span><span class="s6">end</span><span class="s4">;</span>
-<span class="s1">}</span>
-</pre>
-</body>
-</html>
+.ylabel{
+    font-size:25pt;
+    fill:gray;
+    font-weight:bold;
+    text-anchor:end;
+}
