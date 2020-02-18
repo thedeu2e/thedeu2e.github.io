@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type = "text/javascript">
+
+    function Validation()
+    {
+      const form = document.getElementById('registration');
+
+      var username = document.getElementById('username').value.trim();
+      var email = document.getElementById('email').value.trim();
+      var phoneNumber = document.getElementById('phoneNumber').value.trim();
+      var  password = document.getElementById('password').value.trim();
+      var confirmPassword = document.getElementById('confirmPassword').value.trim();
+      var gender = document.getElementsByName('Gender').value;
+      var birthday = document.getElementsByName('Birthday').value;
+      var red = '#F44336';
+      var orange = '#FFA500';
+
+      if( username == "" )
+      {
+        $("<div class='empty'>Please Enter: <span style='color:red'> Username </span> </div>").appendTo("body");
+      }
+      else{
+        if( username != /^[a-z0-9]{4,12}$/)
+        {
+          $("<div class='empty'>Please Enter: <span style='color:orange'> Valid Username </span> </div>").appendTo("body");
+        }
+      }
+
+      if( email == "" )
+      {
+        $("<div class='empty'>Please Enter: <span style='color:red'> Email Address</span> </div>").appendTo("body");
+      }
+      else{
+        if( email != /^[a-z0-9]{4,12}$/)
+        {
+          $("<div class='empty'>Please Enter: <span style='color:orange'> Valid Email Address </span> </div>").appendTo("body");
+        }
+      }
+
+      if( phoneNumber == "")
+      {
+        $("<div class='empty'>Please Enter: <span style='color:red'> Phone Number </span> </div>").appendTo("body");
+      }
+      else{
+        if( phoneNumber != /^(\d{3})-(\d{3})-(\d{4})$/)
+        {
+          $("<div class='empty'>Please Enter: <span style='color:orange'> Valid Phone Number </span> </div>").appendTo("body");
+        }
+      }
+
+      if( password == "" )
+      {
+        $("<div class='empty'>Please Enter: <span style='color:red'> Password </span> </div>").appendTo("body");
+      }
+      else{
+        if( password != /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])$/)
+        {
+          $("<div class='empty'>Please Enter: <span style='color:orange'> Valid Password </span> </div>").appendTo("body");
+        }
+      }
+
+      if( confirmPassword == "" )
+      {
+        $("<div class='empty'>Please Enter: <span style='color:red'> Confirm Password </span> </div>").appendTo("body");
+      }
+      else{
+        if( confirmPassword != password)
+        {
+          $("<div class='empty'>Please Enter: <span style='color:orange'> Valid Confirmation Password </span> </div>").appendTo("body");
+        }
+      }
+
+      if (gender[0].checked == true) {
+      }
+      else if (gender[1].checked == true) {
+      }
+      else if (gender[2].checked == true) {
+      }
+      else
+        {
+        $("<div class='empty'>Please Select: <span style='color:red'> Gender </span> </div>").appendTo("body");
+        }
+
+      if( birthday == "000" || "001" || "002")
+      {
+        $("<div class='empty'>Please Select: <span style='color:red'> Birthday </span> </div>").appendTo("body");
+      }
+    }
+
+    function ClearAll()
+    {
+      $(".empty").remove();
+    }
+
+  </script>
+
+</head>
+<body>
+
+<form name="registration">
+  <table>
+    <tr>
+      <td>
+        Username:
+      </td>
+      <td>
+        <input type="text" placeholder="Username" name="Username" id="username">
+        <span id="m1"> </span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Email:
+      </td>
+      <td>
+        <input type="text" placeholder="Email@example.com" name="Email" id="email">
+        <span id="m2"> </span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Phone number:
+      </td>
+      <td>
+        <input type="text" placeholder="(123-456-7890)" name="Phone number" id="phoneNumber">
+        <span id="m3"> </span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Enter Password:
+      </td>
+      <td>
+        <input type="password" placeholder="Password" name="Password" id="password">
+        <span id="m4"> </span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Confirm Password:
+      </td>
+      <td>
+        <input type="password" placeholder=" Confirm Password"  name="Confirm Password" id="confirmPassword">
+        <span id="m5"> </span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Gender:
+      </td>
+      <td>
+        <input type="radio" name="Gender"> Male
+        <input type="radio" name="Gender"> Female
+        <input type="radio" name="Gender"> Other
+        <span id="m6"> </span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Birth Day:
+      </td>
+      <td>
+        <select>
+          <option name="Birthday" value="000"> </option>
+          <option name="Birthday"> January </option>
+          <option name="Birthday"> February </option>
+          <option name="Birthday"> March </option>
+          <option name="Birthday"> April </option>
+          <option name="Birthday"> May </option>
+          <option name="Birthday"> June </option>
+          <option name="Birthday"> July </option>
+          <option name="Birthday"> August </option>
+          <option name="Birthday"> September </option>
+          <option name="Birthday"> October </option>
+          <option name="Birthday"> November </option>
+          <option name="Birthday"> December </option>
+        </select>
+
+        <select>
+          <option nname="Birthday" value="001"> </option>
+          <option name="Birthday"> 01 </option>
+          <option name="Birthday"> 02 </option>
+          <option name="Birthday"> 03 </option>
+          <option name="Birthday"> 04 </option>
+          <option name="Birthday"> 05 </option>
+          <option name="Birthday"> 06 </option>
+          <option name="Birthday"> 07 </option>
+          <option name="Birthday"> 08 </option>
+          <option name="Birthday"> 09 </option>
+          <option name="Birthday"> 10 </option>
+          <option name="Birthday"> 11 </option>
+          <option name="Birthday"> 12 </option>
+          <option name="Birthday"> 13 </option>
+          <option name="Birthday"> 14 </option>
+          <option name="Birthday"> 15 </option>
+          <option name="Birthday"> 16 </option>
+          <option name="Birthday"> 17 </option>
+          <option name="Birthday"> 18 </option>
+          <option name="Birthday"> 19 </option>
+          <option name="Birthday"> 20 </option>
+          <option name="Birthday"> 21 </option>
+          <option name="Birthday"> 22 </option>
+          <option name="Birthday""> 23 </option>
+          <option name="Birthday"> 24 </option>
+          <option name="Birthday"> 25 </option>
+          <option name="Birthday"> 26 </option>
+          <option name="Birthday"> 27 </option>
+          <option name="Birthday"> 28 </option>
+          <option name="Birthday"> 29 </option>
+          <option name="Birthday"> 30 </option>
+          <option name="Birthday"> 31 </option>
+        </select>
+
+        <select>
+          <option name="Birthday" value="002"> </option>
+          <option name="Birthday"> 1990 </option>
+          <option name="Birthday"> 1991 </option>
+          <option name="Birthday"> 1992 </option>
+          <option name="Birthday"> 1993 </option>
+          <option name="Birthday"> 1994 </option>
+          <option name="Birthday"> 1995 </option>
+          <option name="Birthday"> 1996 </option>
+          <option name="Birthday"> 1997 </option>
+          <option name="Birthday"> 1998 </option>
+          <option name="Birthday"> 1999 </option>
+          <option name="Birthday"> 2000 </option>
+          <option name="Birthday"> 2001 </option>
+          <option name="Birthday"> 2002 </option>
+          <option name="Birthday"> 2003 </option>
+          <option name="Birthday"> 2004 </option>
+          <option name="Birthday"> 2005 </option>
+          <option name="Birthday"> 2006 </option>
+          <option name="Birthday"> 2007 </option>
+          <option name="Birthday"> 2008 </option>
+          <option name="Birthday"> 2009 </option>
+          <option name="Birthday"> 2010 </option>
+        </select>
+
+        <span id="m7"> </span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Favorite Music Genre:
+      </td>
+      <td>
+        <input type="checkbox" name="Genre" value="Pop"> Pop
+        <input type="checkbox" name="Genre" value="Hiphop"> Hiphop
+        <input type="checkbox" name="Genre" value="Jazz"> Jazz
+        <input type="checkbox" name="Genre" value="Rock"> Rock
+        <input type="checkbox" name="Genre" value="Classical music"> Classical music
+        <input type="checkbox" name="Genre" value="Country"> Country
+        <span id="m8"> </span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="button" value="Submit" name="" onclick="Validation();">
+        <input type="Reset" value="Clear" name="" onclick="ClearAll();">
+      </td>
+    </tr>
+  </table>
+</form>
+
+</body>
+</html>

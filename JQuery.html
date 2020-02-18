@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+<script>
+
+  $(document).ready(function() {
+    $("<title> Links </title>").appendTo("head");
+    $("<img id='Twitter' href='https://www.twitter.com' src=\"http://thedeu2e.github.io/images/Twitter.png\" height=100px width=100px>").appendTo("body");
+    $("<img id='Facebook' href='https://www.facebook.com' src=\"http://thedeu2e.github.io/images/Facebook.png\" height=100px width=100px>").appendTo("body");
+    $("<img id='Reddit' href='https://www.reddit.com' src=\"http://thedeu2e.github.io/images/reddit.jpg\" height=100px width=100px>").appendTo("body");
+    $("<img id='LinkedIn' href='https://www.linkedin.com' src=\"http://thedeu2e.github.io/images/Linkedin.png\" height=100px width=100px>").appendTo("body");
+    $(" <img id='Instagram' href='https://www.instagram.com' src=\"http://thedeu2e.github.io/images/instagram.png\" height=100px width=100px>").appendTo("body");
+    $("<div id='div1'>In: </div>").appendTo("body");
+    $("<div id='div2'>Out: </div>").appendTo("body");
+    $("<div id='div3'>Mouse X:, Y:</div>").appendTo("body");
+    $("<span></span>").appendTo("body");
+
+    $("img").mouseenter(function() {
+      var id = $(this).attr("id");
+      $("#div1").text("In:"+ id);
+      $(this).fadeTo('fast',0.5);
+    });
+
+    $("img").mouseleave(function() {
+      var id = $(this).attr("id");
+      $("#div2").text("Out:"+ id);
+      $(this).fadeTo('fast',1.0);
+    });
+
+    $("img").dblclick(function() {
+      var website = $(this).attr("href");
+      window.open(website, '_blank');
+    });
+
+    $(document).mousemove(function(event) {
+      $("#div3").text( "Mouse X: "+ event.pageX + " , Y: "+ event.pageY);
+    });
+
+  });
+
+
+</script>
+
+</body>
+</html>
