@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Registration Form</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script type = "text/javascript">
+    <script type = "text/javascript">
 
     function Validation()
     {
@@ -18,15 +18,23 @@
       var confirmPassword = document.getElementById('confirmPassword').value.trim();
       var gender = document.getElementsByName('Gender').value;
       var birthday = document.getElementsByName('Birthday').value;
-      var red = '#F44336';
-      var orange = '#FFA500';
+
+      var regExp1 = RegExp(/^[a-z0-9]{4,12}$/);
+      var regExp2 = RegExp(/^[A-Za-z0-9\._]{3,}@[A-Za-z]{3,}[.]{1}[A-Za-z]{3,3}$/);
+      var regExp3 = RegExp(/^(\d{3})(-\d{3})-(\d{4})$/);
+      var regExp4 = RegExp(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{4,}$/);
+
+
 
       if( username == "" )
       {
         $("<div class='empty'>Please Enter: <span style='color:red'> Username </span> </div>").appendTo("body");
       }
       else{
-        if( username != /^[a-z0-9]{4,12}$/)
+        if(regExp1.test(username))
+        {
+        }
+        else
         {
           $("<div class='empty'>Please Enter: <span style='color:orange'> Valid Username </span> </div>").appendTo("body");
         }
@@ -37,7 +45,10 @@
         $("<div class='empty'>Please Enter: <span style='color:red'> Email Address</span> </div>").appendTo("body");
       }
       else{
-        if( email != /^[a-z0-9]{4,12}$/)
+        if(regExp2.test(email))
+        {
+        }
+        else
         {
           $("<div class='empty'>Please Enter: <span style='color:orange'> Valid Email Address </span> </div>").appendTo("body");
         }
@@ -48,7 +59,10 @@
         $("<div class='empty'>Please Enter: <span style='color:red'> Phone Number </span> </div>").appendTo("body");
       }
       else{
-        if( phoneNumber != /^(\d{3})-(\d{3})-(\d{4})$/)
+        if( regExp3.test(phoneNumber))
+        {
+        }
+        else
         {
           $("<div class='empty'>Please Enter: <span style='color:orange'> Valid Phone Number </span> </div>").appendTo("body");
         }
@@ -59,7 +73,10 @@
         $("<div class='empty'>Please Enter: <span style='color:red'> Password </span> </div>").appendTo("body");
       }
       else{
-        if( password != /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])$/)
+        if( password.match(regExp4))
+        {
+        }
+        else
         {
           $("<div class='empty'>Please Enter: <span style='color:orange'> Valid Password </span> </div>").appendTo("body");
         }
@@ -76,21 +93,19 @@
         }
       }
 
-      if (gender[0].checked == true) {
-      }
-      else if (gender[1].checked == true) {
-      }
-      else if (gender[2].checked == true) {
-      }
-      else
-        {
+      if (gender  == undefined)
+      {
         $("<div class='empty'>Please Select: <span style='color:red'> Gender </span> </div>").appendTo("body");
-        }
+      }
 
       if( birthday == "000" || "001" || "002")
       {
         $("<div class='empty'>Please Select: <span style='color:red'> Birthday </span> </div>").appendTo("body");
       }
+      else
+        {
+
+        }
     }
 
     function ClearAll()
