@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>Registration Form</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script type = "text/javascript">
+  <script type = "text/javascript">
 
     function Validation()
     {
@@ -16,7 +13,9 @@
       var phoneNumber = document.getElementById('phoneNumber').value.trim();
       var  password = document.getElementById('password').value.trim();
       var confirmPassword = document.getElementById('confirmPassword').value.trim();
-      var gender = document.getElementsByName('Gender').value;
+      var gender1 = document.getElementById('Male').checked;
+      var gender2 = document.getElementById('Female').checked;
+      var gender3 = document.getElementById('Other').checked;
       var birthday = document.getElementsByName('Birthday').value;
 
       var regExp1 = RegExp(/^[a-z0-9]{4,12}$/);
@@ -93,9 +92,12 @@
         }
       }
 
-      if (gender  == undefined)
+      if (gender1 == false && gender2 == false && gender3 == false)
       {
         $("<div class='empty'>Please Select: <span style='color:red'> Gender </span> </div>").appendTo("body");
+      }
+      else
+      {
       }
 
       if( birthday == "000" || "001" || "002")
@@ -118,7 +120,7 @@
 </head>
 <body>
 
-<form name="registration">
+<form name="registration" action="https://thedeu2e.github.io/index.html" onsubmit="Validation();">
   <table>
     <tr>
       <td>
@@ -126,7 +128,6 @@
       </td>
       <td>
         <input type="text" placeholder="Username" name="Username" id="username">
-        <span id="m1"> </span>
       </td>
     </tr>
     <tr>
@@ -135,7 +136,6 @@
       </td>
       <td>
         <input type="text" placeholder="Email@example.com" name="Email" id="email">
-        <span id="m2"> </span>
       </td>
     </tr>
     <tr>
@@ -144,7 +144,6 @@
       </td>
       <td>
         <input type="text" placeholder="(123-456-7890)" name="Phone number" id="phoneNumber">
-        <span id="m3"> </span>
       </td>
     </tr>
     <tr>
@@ -153,7 +152,6 @@
       </td>
       <td>
         <input type="password" placeholder="Password" name="Password" id="password">
-        <span id="m4"> </span>
       </td>
     </tr>
     <tr>
@@ -162,7 +160,6 @@
       </td>
       <td>
         <input type="password" placeholder=" Confirm Password"  name="Confirm Password" id="confirmPassword">
-        <span id="m5"> </span>
       </td>
     </tr>
     <tr>
@@ -170,10 +167,9 @@
         Gender:
       </td>
       <td>
-        <input type="radio" name="Gender"> Male
-        <input type="radio" name="Gender"> Female
-        <input type="radio" name="Gender"> Other
-        <span id="m6"> </span>
+        <input type="radio" name="Gender" id="Male"> Male
+        <input type="radio" name="Gender" id="Female"> Female
+        <input type="radio" name="Gender" id="Other"> Other
       </td>
     </tr>
     <tr>
@@ -257,7 +253,6 @@
           <option name="Birthday"> 2010 </option>
         </select>
 
-        <span id="m7"> </span>
       </td>
     </tr>
     <tr>
@@ -271,7 +266,6 @@
         <input type="checkbox" name="Genre" value="Rock"> Rock
         <input type="checkbox" name="Genre" value="Classical music"> Classical music
         <input type="checkbox" name="Genre" value="Country"> Country
-        <span id="m8"> </span>
       </td>
     </tr>
     <tr>
@@ -285,3 +279,4 @@
 
 </body>
 </html>
+
