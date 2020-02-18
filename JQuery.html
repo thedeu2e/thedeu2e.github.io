@@ -34,6 +34,14 @@
       var website = $(this).attr("href");
       window.open(website, '_blank');
     });
+    
+     $("img").mouseover(function(){
+      $(this).css("background-color", "blue");
+    });
+    
+    $("img").mouseout(function(){
+      $(this).css("background-color", "white");
+    });
 
     $(document).mousemove(function(event) {
       $("#div3").text( "Mouse X: "+ event.pageX + " , Y: "+ event.pageY);
